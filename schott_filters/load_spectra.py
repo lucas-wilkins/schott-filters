@@ -1,5 +1,6 @@
 import numpy as np
 from dataclasses import dataclass
+from importlib import resources
 
 @dataclass
 class SchottSpectrum:
@@ -22,11 +23,11 @@ class SchottSpectrum:
 
 def load_spectra(include_small_values=True) -> dict[str, SchottSpectrum]:
     if include_small_values:
-        filename = "spectra/data_with_small_values.csv"
+        filename = "data_with_small_values.csv"
     else:
-        filename = "spectra/simple_data.csv"
+        filename = "simple_data.csv"
 
-    with open(filename, 'r') as file:
+    with resources.open_text("schott_filters.spectra", filename) as file:
         line = file.readline()
         names = [part.strip() for part in line.split(",")][1:]
         names = [name[1:-1] for name in names]
@@ -43,7 +44,7 @@ def load_spectra(include_small_values=True) -> dict[str, SchottSpectrum]:
 
     thicknesses = {}
     # Load in the thicknesses
-    with open("spectra/reference_thickness.csv", 'r') as file:
+    with resources.open_text("schott_filters.spectra", "reference_thickness.csv") as file:
         file.readline() # skip first line
         for line in file:
             parts = line.split(",")
