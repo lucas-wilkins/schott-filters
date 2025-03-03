@@ -1,0 +1,6 @@
+requests
+beautifulsoup4
+fitz
+PyMuPDF
+numpy
+matplotlib

@@ -169,3 +169,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+/data/english_datasheet_urls.pickle
+/data/german_datasheet_urls.pickle
+/data/index.json
+/data/landing_page.html
+/data/datasheets/*.pdf
+/data/datasheet-text/*.txt
+
