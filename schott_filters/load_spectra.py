@@ -16,6 +16,10 @@ class SchottSpectrum:
     wavelengths: np.ndarray
     transmittance: np.ndarray
 
+    @property
+    def absorbance(self):
+        return -np.log10(self.transmittance) / self.reference_thickness
+
 def load_spectra(include_small_values=True) -> dict[str, SchottSpectrum]:
     if include_small_values:
         filename = "spectra/data_with_small_values.csv"

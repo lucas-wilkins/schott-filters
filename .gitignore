@@ -171,10 +171,10 @@ cython_debug/
 .pypirc
 
 
-/data/english_datasheet_urls.pickle
-/data/german_datasheet_urls.pickle
-/data/index.json
-/data/landing_page.html
-/data/datasheets/*.pdf
-/data/datasheet-text/*.txt
+schott_filters/data/english_datasheet_urls.pickle
+schott_filters/data/german_datasheet_urls.pickle
+schott_filters/data/index.json
+schott_filters/data/landing_page.html
+schott_filters/data/datasheets/*.pdf
+schott_filters/data/datasheet-text/*.txt
 
