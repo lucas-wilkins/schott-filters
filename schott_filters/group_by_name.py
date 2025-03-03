@@ -12,16 +12,18 @@ for name in spectra:
     group_name = matches[0]
     groups[group_name][name] = spectra[name]
 
-import matplotlib.pyplot as plt
+if __name__ == "__main__":
+    
+    import matplotlib.pyplot as plt
 
-for group_name in groups:
-    plt.figure(group_name)
-    group = groups[group_name]
-    for name in group:
-        spectrum = group[name]
-        plt.plot(spectrum.wavelengths, spectrum.absorbance, label=name)
+    for group_name in groups:
+        plt.figure(group_name)
+        group = groups[group_name]
+        for name in group:
+            spectrum = group[name]
+            plt.plot(spectrum.wavelengths, spectrum.absorbance, label=name)
 
-    plt.xlim([200, 800])
-    plt.legend()
+        plt.xlim([200, 800])
+        plt.legend()
 
-plt.show()
+    plt.show()
